@@ -9,12 +9,12 @@ import org.junit.jupiter.api.Test;
 
 import model.Item;
 import model.Package;
-
-import packer.PackerRecursive;
+import service.PackerService;
+import service.impl.PackerServiceImpl;
 
 public class PackerRecursiveTest {
 
-	private static  PackerRecursive packer;
+	private static  PackerService packer;
 	
 	private Package mockInputValues() {
 		List<Item> itemList = new ArrayList<>();
@@ -50,7 +50,7 @@ public class PackerRecursiveTest {
 	
 	@BeforeAll
 	static void setUp() {
-		packer = new PackerRecursive();
+		packer = new PackerServiceImpl();
 	}
 	
 	@Test

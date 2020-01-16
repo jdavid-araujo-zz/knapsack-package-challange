@@ -19,35 +19,6 @@ public class PackerTest {
 	private String path3 = "src\\test\\resources\\input-sample3.txt";
 	private String path4 = "src\\test\\resources\\input-sample4.txt";
 	private String path5 = "src\\test\\resources\\input-sample5.txt";
-
-
-	
-	private Package mockInputWeigthMoreThan100Values() {
-		List<Item> itemList = new ArrayList<>();
-		itemList.add(new Item(1, 101.00, 10));
-		itemList.add(new Item(2, 88.62, 40));
-		itemList.add(new Item(3, 78.48, 30));
-		itemList.add(new Item(4, 72.30, 20));
-		itemList.add(new Item(5, 30.18, 50));
-
-		Package pck = new Package(40, itemList);
-		
-		return pck;
-	}
-	
-	
-	private Package mockInputCostMoreThan100Values() {
-		List<Item> itemList = new ArrayList<>();
-		itemList.add(new Item(1, 53.38, 10));
-		itemList.add(new Item(2, 88.62, 101));
-		itemList.add(new Item(3, 78.48, 30));
-		itemList.add(new Item(4, 72.30, 20));
-		itemList.add(new Item(5, 30.18, 50));
-
-		Package pck = new Package(40, itemList);
-		
-		return pck;
-	}
 	
 	private String mockIndexResultOutput() {
 		String result = "4\n" 	+

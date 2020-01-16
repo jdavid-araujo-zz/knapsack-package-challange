@@ -1,12 +1,13 @@
-package packer;
+package service.impl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import model.Package;
+import service.PackerService;
 
-public class PackerRecursive {
+public class PackerServiceImpl implements PackerService {
 	
 	/**
 	 * 
@@ -29,12 +30,12 @@ public class PackerRecursive {
 		Arrays.fill(visited, Boolean.FALSE);
 		
 		/*
-		 * Compute the recursion tree, keeping track of visited items
+		 * Tracking visited items
 		 */
-		Integer maxValue = maximizeValue(pck.getWeight(), wt, val, pck.getItems().size(), visited);
+		maximizeValue(pck.getWeight(), wt, val, pck.getItems().size(), visited);
 		
 		/*
-		 * 
+		 * Check the items that were visited
 		 */
 		List<String> solutionItems = new ArrayList<>();
 		for ( int i = 0; i < pck.getItems().size(); i++ ) {
@@ -56,7 +57,7 @@ public class PackerRecursive {
 	 * @param wt array of items weights
 	 * @param val array of items values
 	 * @param N total number of items
-	 * @param visited 
+	 * @param visited array of status of item visited
 	 * @return maximum value for the package
 	 */
 	private Integer maximizeValue(Integer W, Double wt[], Integer val[], Integer N, Boolean visited[]) {

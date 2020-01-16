@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 import exception.APIException;
 import model.Item;
 import model.Package;
+import service.PackerService;
+import service.impl.PackerServiceImpl;
 import util.RegexUtil;
 
 public class Packer {
@@ -21,7 +23,7 @@ public class Packer {
 	private static final Integer MAX_ITEMS = 15;
 
 
-	private static PackerRecursive packerRecursive = new PackerRecursive();
+	private static PackerService packerService = new PackerServiceImpl();
 
 	/**
 	 * 
@@ -104,7 +106,7 @@ public class Packer {
 			i++;
 		}
 
-		List<String> indexList = packerRecursive.getIndex(pck);
+		List<String> indexList = packerService.getIndex(pck);
 
 		/**
 		 * Mount the String result for a line
