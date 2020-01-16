@@ -1,6 +1,6 @@
 # knapsack-package-challange
 
-Application to solve a specific problem using knapsack. Get the list of index that hava the
+Get the list of index that hava the
 total weight is less than or equal to the package limit and the total cost is as large as possible.
 
 # How to run
@@ -10,6 +10,8 @@ To build the project you need have the maven installed, then access the project 
 By default, the application is available at `http://localhost:8080/`
  
  # Technologies Used
+ 
+ Using SOLID methodology for design and knapsack as reference for the solution.
  
  1. Java as programming language
  2. Libraries:
